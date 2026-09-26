@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>重慶 6 日遊 · 2026.10.9 – 10.14</title>
+<style>
+:root{
+  --paper:#f6f1e7;
+  --paper-2:#fdfaf3;
+  --ink:#2b2620;
+  --ink-soft:#6f6558;
+  --vermilion:#c0392b;
+  --vermilion-deep:#96271b;
+  --gold:#c08a2d;
+  --line:#e4dbc9;
+  --card:#fffdf8;
+  --shadow:0 6px 24px rgba(60,40,20,.10);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(circle at 20% 0%,rgba(192,57,43,.05),transparent 45%),radial-gradient(circle at 100% 30%,rgba(192,138,45,.06),transparent 40%);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","PingFang HK","Microsoft JhengHei","Noto Sans TC",sans-serif;
+  line-height:1.7;
+  padding-bottom:64px;
+}
+.serif{font-family:"Noto Serif TC","Songti TC","PMingLiU","SimSun",serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:min(62vw,420px);min-height:280px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,5,.25) 0%,rgba(20,10,5,0) 35%,rgba(20,10,5,.72) 100%)}
+.hero-text{position:absolute;left:0;right:0;bottom:0;padding:24px 20px 20px;color:#fff;z-index:2}
+.hero-kicker{font-size:12px;letter-spacing:.35em;color:#f3d9a4;text-transform:uppercase;margin-bottom:6px}
+.hero h1{font-size:clamp(30px,8vw,44px);line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero-sub{font-size:14px;color:#f0e6d6;margin-top:6px}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.hero-badges span{font-size:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.28);padding:3px 10px;border-radius:999px}
+
+/* ---------- Flight strip ---------- */
+.flight-strip{background:var(--ink);color:#f3ead9;font-size:13px}
+.flight-strip .wrap{display:flex;gap:14px;align-items:center;padding-top:10px;padding-bottom:10px;overflow-x:auto;white-space:nowrap}
+.flight-strip b{color:#f3d9a4;font-weight:600}
+
+/* ---------- Day tabs ---------- */
+.daybar{position:sticky;top:0;z-index:20;background:rgba(246,241,231,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.daybar .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.daybar .wrap::-webkit-scrollbar{display:none}
+.daytab{flex:0 0 auto;border:1.5px solid var(--line);background:var(--card);border-radius:14px;padding:8px 14px;cursor:pointer;text-align:center;transition:all .25s;min-width:76px}
+.daytab .d{font-weight:700;font-size:14px}
+.daytab .t{font-size:11px;color:var(--ink-soft);margin-top:1px}
+.daytab.active{background:var(--vermilion);border-color:var(--vermilion);color:#fff;box-shadow:0 4px 14px rgba(192,57,43,.35)}
+.daytab.active .t{color:#ffd9c9}
+
+/* ---------- Day header ---------- */
+.dayhead{padding:28px 0 6px}
+.dayhead .date{font-size:13px;color:var(--gold);letter-spacing:.15em;font-weight:600}
+.dayhead h2{font-size:clamp(22px,6vw,30px);margin-top:4px}
+.dayhead p{color:var(--ink-soft);font-size:14px;margin-top:6px}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;margin-top:18px;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--vermilion));border-radius:2px;opacity:.5}
+.slot{position:relative;margin-bottom:22px}
+.slot::before{content:"";position:absolute;left:-25px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--vermilion)}
+.slot-time{font-size:13px;font-weight:700;color:var(--vermilion);letter-spacing:.05em}
+.slot-title{font-size:16px;font-weight:700;margin:2px 0 4px}
+.slot-note{font-size:13.5px;color:var(--ink-soft)}
+.slot-note em{font-style:normal;color:var(--gold);font-weight:600}
+
+/* ---------- Spot card ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:10px}
+.card-img{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#3a2c22,#7a3b2a);overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.card:active .card-img img{transform:scale(1.04)}
+.card-img .fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:40px;color:#f3d9a4}
+.card-img.img-failed img{display:none}
+.card-img.img-failed .fallback{display:flex}
+.card-tag{position:absolute;left:12px;top:12px;background:rgba(20,12,6,.55);backdrop-filter:blur(4px);color:#ffe9c9;font-size:11.5px;padding:3px 10px;border-radius:999px;border:1px solid rgba(255,233,201,.35)}
+.card-body{padding:14px 16px 12px}
+.card-name{font-size:17px;font-weight:700;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.card-name small{font-size:12.5px;color:var(--ink-soft);font-weight:400}
+.card-intro{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
+.card-toggle{margin-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--vermilion);background:none;border:none;cursor:pointer;padding:4px 0}
+.card-toggle .arrow{display:inline-block;transition:transform .3s}
+.card.open .card-toggle .arrow{transform:rotate(180deg)}
+.card-detail{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.card.open .card-detail{max-height:420px}
+.detail-inner{border-top:1px dashed var(--line);margin-top:8px;padding-top:10px;display:grid;gap:8px}
+.drow{display:flex;gap:10px;font-size:13px}
+.drow .k{flex:0 0 62px;color:var(--gold);font-weight:700}
+.drow .v{color:var(--ink)}
+.drow.tip .v{background:#fdf3e4;border-radius:10px;padding:6px 10px;flex:1}
+
+/* ---------- Meal / transport mini ---------- */
+.mini{display:flex;gap:10px;align-items:flex-start;background:rgba(255,253,248,.7);border:1px dashed var(--line);border-radius:14px;padding:10px 14px;margin-top:10px;font-size:13.5px;color:var(--ink-soft)}
+.mini .ic{font-size:18px;line-height:1.4}
+.mini b{color:var(--ink)}
+
+/* ---------- Footer ---------- */
+footer{margin-top:40px;padding:24px 0 8px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--ink-soft)}
+footer .seal{font-size:22px;letter-spacing:.4em;color:var(--vermilion);margin-bottom:8px}
+
+@media (min-width:640px){
+  .card-detail{transition:max-height .45s ease}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg/1280px-202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg" alt="洪崖洞夜景">
+  <div class="hero-text">
+    <div class="hero-kicker">Chongqing · 8D 魔幻山城</div>
+    <h1 class="serif">重慶六日遊</h1>
+    <div class="hero-sub">2026 年 10 月 9 日（週五）– 10 月 14 日（週三）· 香港出發</div>
+    <div class="hero-badges">
+      <span>🏙 解放碑夜色</span><span>🚠 長江索道</span><span>🌉 武隆天坑</span><span>🛶 地心暗河</span>
+    </div>
+  </div>
+</header>
+
+<div class="flight-strip">
+  <div class="wrap">
+    <span>✈️ 去程 <b>CX928</b> 10/9 香港 12:05 → 重慶 15:20</span>
+    <span>｜</span>
+    <span>✈️ 回程 <b>CX945</b> 10/14 重慶 16:35 → 香港 19:50</span>
+    <span>｜</span>
+    <span>🏨 解放碑國貿中心亞朵酒店</span>
+  </div>
+</div>
+
+<nav class="daybar"><div class="wrap" id="dayTabs"></div></nav>
+
+<main class="wrap" id="dayContent"></main>
+
+<footer>
+  <div class="seal serif">山城 · 再會</div>
+  <div>門票與開放時間以景區當日公告為準 · 圖片來自 Wikimedia Commons 及公開來源</div>
+</footer>
+
+<script>
+var SPOTS = {
+  jiefangbei:{name:"解放碑步行街",sub:"Jiefangbei",tag:"地標商圈",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chongqing_-_Jiefangbei.jpg/960px-Chongqing_-_Jiefangbei.jpg",alt:"解放碑 CBD 全景",intro:"重慶嘅時代廣場，抗戰勝利紀念碑屹立繁華商圈心臟。",hours:"全天開放（商場約 10:00–22:00）",ticket:"免費",tip:"地鐵 1/2/6 號線小什字、較場口、臨江門站都到；夜晚燈光比日頭好睇，可以同八一好吃街、洪崖洞串埋一齊行。"},
+  hongyadong:{name:"洪崖洞",sub:"現實版《千與千尋》",tag:"必打卡夜景",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg/960px-202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg",alt:"洪崖洞夜景",intro:"懸崖上嘅十一層吊腳樓，現實版《千與千尋》油屋。",hours:"9:00–23:00；外牆燈飾約 18:00–23:00",ticket:"免費（節假日需官方小程序實名預約）",tip:"最佳拍攝點唔喺景區入面，而係千厮门大桥上；由 11 樓（沧白路）入、1 樓出最慳力。10 月天黑早，建議 19:00 前到達等開燈。"},
+  qiansimen:{name:"千厮门大桥",sub:"Qiansimen Bridge",tag:"夜景機位",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Qiansimen_Bridge_at_night_20251027.jpg/960px-Qiansimen_Bridge_at_night_20251027.jpg",alt:"千厮门大桥夜景",intro:"嘉陵江上嘅紅色斜張橋，洪崖洞夜景最佳觀景台。",hours:"全天開放（行人通道）",ticket:"免費",tip:"橋面人行道係影洪崖洞全景嘅第一機位，黃昏「藍調時刻」最出片；節假日夜晚大橋可能限流，早啲去霸位。"},
+  shanchengxiang:{name:"山城巷",sub:"Shancheng Alley",tag:"老街漫步",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Shancheng_Alley%2C_Chongqing.jpg/960px-Shancheng_Alley%2C_Chongqing.jpg",alt:"山城巷老街石階",intro:"懸崖邊嘅百年老街，老重慶最後嘅煙火記憶。",hours:"全天開放；店舖約 10:00–21:00",ticket:"免費",tip:"建議由七星岗／领事巷入口入，全程下坡最慳力；崖邊懸空栈道同仁爱堂废墟係打卡位，可遠眺長江。"},
+  shibati:{name:"十八梯",sub:"Shibati",tag:"老街漫步",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Shibati_%E5%8D%81%E5%85%AB%E6%A2%AF_2022.1.1.jpg/960px-Shibati_%E5%8D%81%E5%85%AB%E6%A2%AF_2022.1.1.jpg",alt:"十八梯吊腳樓",intro:"十八段石階串起上下半城，老重慶嘅垂直街巷博物館。",hours:"全天開放；商戶約 10:00–22:00",ticket:"免費（個別展館約 20 元）",tip:"地鐵 1/2 號線较场口站 4/11 號口直達；由上往下走最輕鬆；大隧道遗址值得入去睇。"},
+  suodao:{name:"长江索道",sub:"Yangtze River Cableway",tag:"空中渡江",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/A_aerial_tramway_across_Yangtse_river_in_Chongqing_CBD_Photo_by_Chen_Hualin_.jpeg/960px-A_aerial_tramway_across_Yangtse_river_in_Chongqing_CBD_Photo_by_Chen_Hualin_.jpeg",alt:"長江索道纜車",intro:"萬里長江第一條空中走廊，五分鐘飛渡兩江天際線。",hours:"3–11 月 08:00–22:00",ticket:"單程 30 元 · 往返 50 元",tip:"一定要提前喺「长江索道」微信公眾號購票，購票後自動排號，按提示時間到場就得；由南岸上新街南站上車排隊通常較短。"},
+  liziba:{name:"李子坝观景平台",sub:"單軌穿樓",tag:"8D 奇觀",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/%E6%9D%8E%E5%AD%90%E5%9D%9D%E7%AB%99%E8%BD%BB%E8%BD%A8%E7%A9%BF%E6%A5%BC_0023.png/960px-%E6%9D%8E%E5%AD%90%E5%9D%9D%E7%AB%99%E8%BD%BB%E8%BD%A8%E7%A9%BF%E6%A5%BC_0023.png",alt:"單軌列車穿樓",intro:"列車穿樓而過嘅魔幻一刻，8D 重慶嘅城市名片。",hours:"觀景平台全天開放；單軌約 6:32–23:50",ticket:"免費",tip:"觀景平台喺李子坝站樓下馬路對面，出站落樓就到；列車幾分鐘一班唔使特登等；可順路搭 T083 半山小巴（6 元）上鹅岭二厂。"},
+  ciqikou:{name:"磁器口古镇",sub:"Ciqikou",tag:"千年古鎮",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Ciqikou_image_1.jpg/960px-Ciqikou_image_1.jpg",alt:"磁器口古鎮老街",intro:"一條石板路、千年磁器口，嘉陵江畔嘅水陸碼頭遗韻。",hours:"全天開放；商舖約 9:00–21:00",ticket:"免費（小景點另收約 10–20 元）",tip:"假日人山人海，建議朝早 8–9 點入場；地鐵 1 號線磁器口站 1 號口步行 300 米；陈麻花認準老街總店，門口山寨店多。"},
+  raffles:{name:"重庆来福士广场",sub:"Raffles City",tag:"地標建築",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Raffles_City_Chongqing_2019-2.jpg/960px-Raffles_City_Chongqing_2019-2.jpg",alt:"重慶來福士廣場",intro:"八帆揚起嘅橫向摩天樓，250 米高空俯瞰兩江交匯。",hours:"商場 10:00–22:00；觀景台 10:00–22:00（21:15 停止檢票）",ticket:"商場免費；觀景台 120 元，觀光+云中漫步套票 198 元",tip:"觀景台入口喺商場 L1 層 7 號門旁，50 秒高速電梯直上水晶連廊；下晝 5 點幾上去可以一次過睇日落加夜景。"},
+  chaotianmen:{name:"朝天门广场",sub:"兩江交匯",tag:"城市原點",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Confluence_of_the_Jialing_River_and_Yangtze_River_in_Chongqing%2C_China._2017-07-23_%2839675532152%29.jpg/960px-Confluence_of_the_Jialing_River_and_Yangtze_River_in_Chongqing%2C_China._2017-07-23_%2839675532152%29.jpg",alt:"兩江交匯",intro:"重慶零公里起點，碧綠嘉陵擁入褐黃長江嘅懷抱。",hours:"全天開放",ticket:"免費",tip:"「鸳鸯锅」兩江分界喺雨后或汛期最明顯；廣場旁可搭「兩江小渡」或夜遊船；同來福士就喺隔籬，一併安排最順路。"},
+  erling:{name:"鹅岭二厂文创园",sub:"TESTBED2 贰厂",tag:"文青園區",img:"https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/3aa51d7ba53c456f81feb1fd5ae2d9f0~tplv-xv4ileqgde-resize-w:750.image",alt:"二廠 TESTBED2 標誌",intro:"印鈔廠老廠房變身文創樂園，電影同款愛情天台所在地。",hours:"園區全天開放；店舖約 10:00–22:00",ticket:"免費（愛情天台等個別項目約 29.9 元）",tip:"《从你的全世界路过》《少年的你》取景地；由李子坝步行上去要爬坡，可搭 T083 半山小巴；下晝去可連住睇黃昏同夜景。"},
+  guanyinqiao:{name:"观音桥商圈",sub:"Guanyinqiao",tag:"本地商圈",img:"https://upload.wikimedia.org/wikipedia/commons/d/de/%E8%A7%82%E9%9F%B3%E6%A1%A5%E6%AD%A5%E8%A1%8C%E8%A1%97.jpg",alt:"觀音橋步行街",intro:"江北嘅購物心臟，本地人嘅潮流飯堂與深夜食堂。",hours:"步行街全天開放；商場約 10:00–22:00",ticket:"免費",tip:"观音桥好吃街係本地人飯堂，價錢比八一九街平；週末夜晚好逼，睇好隨身物品。"},
+  jiujie:{name:"九街夜市",sub:"不夜九街",tag:"夜生活",img:"http://www.cqylw.cn/wp-content/uploads/2025/04/f7db9ae1-7a99-49a2-b597-03a44ac347f3-1024x683.jpg",alt:"九街街區實景",intro:"重慶夜經濟名片，霓虹下嘅不夜潮流街區。",hours:"全天開放；酒吧宵夜夜晚至凌晨最旺",ticket:"免費",tip:"酒吧、Live House、燒烤宵夜一條龍；黃昏後先去观音桥好吃街食飯再行過去；想靜啲就揀工作日去。"},
+  tiansheng:{name:"天生三桥",sub:"含天福官驿 · 武隆",tag:"世界自然遺產",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Three_Natural_Bridges_-_Sky_Dragon_Bridge_-_building.JPG/960px-Three_Natural_Bridges_-_Sky_Dragon_Bridge_-_building.JPG",alt:"天福官驿與天龍橋",intro:"世界最大天生橋群，黃金甲與變形金剛嘅秘境片場。",hours:"8:30–16:30（最遲 16:00 入園）",ticket:"旺季 125 元（含中轉車+觀光電梯）",tip:"仙女山鎮遊客中心統一換乘中轉車；搭旋轉電梯落坑後先見到天福官驿，右上方觀景台用全景模式影天坑最靚；單行線約 3 小時，著防滑鞋。"},
+  longshuixia:{name:"龙水峡地缝",sub:"武隆",tag:"地心峽谷",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/%E9%BE%99%E6%B0%B4%E5%B3%A1%E5%9C%B0%E7%BC%9D_-_Longshuixia_Canyon_-_2015.04_-_panoramio.jpg/960px-%E9%BE%99%E6%B0%B4%E5%B3%A1%E5%9C%B0%E7%BC%9D_-_Longshuixia_Canyon_-_2015.04_-_panoramio.jpg",alt:"龍水峽地縫棧道",intro:"大地裂開嘅深呼吸，瀑布飛虹嘅地心峽谷棧道。",hours:"8:30–16:30",ticket:"105 元（含中轉車+觀光電梯）",tip:"同天生三桥買聯票更抵；地縫內潮濕多水霧，帶薄外套同防滑鞋，全程下行棧道約 2 小時；雨天部分路段或封閉，出發前查公告。"},
+  dixin:{name:"地心探险极地",sub:"渝北洛碛鎮",tag:"溶洞暗河",img:"https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/df627afc0264464ca2912ad51d139df2~tplv-xv4ileqgde-resize-w:750.image",alt:"地心探險極地溶洞",intro:"恆溫 18℃ 嘅地心秘境，划船穿越五公里極暗暗河。",hours:"約 09:00–17:00（以景區當日公告為準）",ticket:"成人約 158 元 · 學生 128 元",tip:"全程 6.5 公里（陸路 1.5 公里+暗河遊船 5 公里），洞內恆溫 18℃ 要帶薄外套；冇公共交通直達，建議包車或自駕（G50 滬渝高速洛碛出口）。"},
+  bayi:{name:"八一好吃街",sub:"Bayi Food Street",tag:"美食掃街",img:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/%E5%85%AB%E4%B8%80%E5%A5%BD%E5%90%83%E8%A1%97.jpg/960px-%E5%85%AB%E4%B8%80%E5%A5%BD%E5%90%83%E8%A1%97.jpg",alt:"八一好吃街",intro:"解放碑旁嘅美食宇宙中心，酸辣粉嘅朝聖之地。",hours:"全天開放；食肆約 10:00–22:00",ticket:"免費",tip:"好又来酸辣粉、山城小湯圓、胖子媽鹽水鴨係老字號；就喺解放碑隔籬，避開 12 點同 6 點飯點高峰。"}
+};
+
+var DAYS = [
+  {id:1,date:"10.9",week:"週五",title:"抵達重慶 · 解放碑夜色初體驗",desc:"下午抵達山城，安頓後直奔解放碑同洪崖洞，用一場燈火展開旅程。",slots:[
+    {time:"12:05 – 15:20",title:"國泰 CX928 香港 → 重慶",minis:[{ic:"✈️",html:"<b>12:05 香港起飛，15:20 抵達重慶江北國際機場</b>。辦理出關後搭地鐵或預約專車前往酒店，車程約 40–50 分鐘。"}]},
+    {time:"17:30 – 19:30",title:"入住酒店 · 解放碑步行街",note:"入住解放碑國貿中心亞朵酒店稍作休息，步行至解放碑逛街醫肚。",cards:["jiefangbei"],minis:[{ic:"🍜",html:"晚餐：<b>重慶小麵</b>、<b>九宮格火鍋</b>等地道美食。"}]},
+    {time:"19:30 – 21:30",title:"洪崖洞夜景 · 千厮门大桥",note:"觀賞如《千與千尋》般嘅懸崖吊腳樓點燈景色，隨後沿大橋散步欣賞江景。",cards:["hongyadong","qiansimen"]}
+  ]},
+  {id:2,date:"10.10",week:"週六",title:"山城漫步 · 長江索道與 8D 魔幻都市",desc:"老街、索道、穿樓單軌、千年古鎮——一日睇盡重慶嘅立體與魔幻。",slots:[
+    {time:"09:30 – 11:30",title:"山城巷 · 十八梯",note:"沿懸崖棧道俯瞰長江，體驗原汁原味嘅老街巷文化與防空洞特色。",cards:["shanchengxiang","shibati"]},
+    {time:"11:30 – 13:00",title:"長江索道",note:"建議提前線上預約購票，感受飛越長江嘅空中視野。",cards:["suodao"]},
+    {time:"13:00 – 14:00",title:"午餐 · 特色江湖菜",minis:[{ic:"🌶️",html:"推薦 <b>辣子雞</b>、<b>毛血旺</b>。"}]},
+    {time:"14:30 – 17:30",title:"李子坝「單軌穿樓」· 磁器口古镇",note:"先睇著名嘅單軌穿樓奇觀，再去古鎮品嚐陳麻花、感受茶館文化。",cards:["liziba","ciqikou"]},
+    {time:"18:30 – 21:00",title:"晚餐 · 重慶夜景",minis:[{ic:"🌃",html:"於磁器口或返程途中享用晚餐，欣賞重慶夜景。"}]}
+  ]},
+  {id:3,date:"10.11",week:"週日",title:"來福士兩江交匯 · 文青文創園區",desc:"上午打卡地標天際線，下午浸喺電影取景地嘅文青氛圍，夜晚直落夜市。",slots:[
+    {time:"10:00 – 12:30",title:"重庆来福士广场 · 朝天门广场",note:"打卡長江與嘉陵江交匯之處，可選擇登上水晶連廊觀景台俯瞰景色。",cards:["raffles","chaotianmen"]},
+    {time:"12:30 – 14:00",title:"午餐 · 來福士廣場",minis:[{ic:"🥘",html:"廣場內各式重慶特色美食或川菜。"}]},
+    {time:"14:30 – 17:30",title:"鹅岭二厂文创园",note:"電影《從你的全世界路過》取景地，遠眺兩江美景，影相極具文青風格。",cards:["erling"]},
+    {time:"18:30 – 21:00",title:"观音桥商圈 · 九街夜市",note:"體驗重慶熱鬧夜生活與在地串串香。",cards:["guanyinqiao","jiujie"],minis:[{ic:"🍢",html:"宵夜必試：<b>串串香</b>。"}]}
+  ]},
+  {id:4,date:"10.12",week:"週一",title:"武隆包車一日遊",desc:"指定行程：世界自然遺產喀斯特天坑與幽深地縫，來一場地質奇觀之旅。",slots:[
+    {time:"07:30 – 10:00",title:"包車出發前往武隆",minis:[{ic:"🚐",html:"司機至酒店接送，車程約 2.5 小時。"}]},
+    {time:"10:00 – 13:00",title:"天生三桥 · 天福官驿",note:"搭乘天梯直達谷底，打卡《滿城盡帶黃金甲》及《變形金剛4》取景地，感受雄偉喀斯特天坑地貌。",cards:["tiansheng"]},
+    {time:"13:00 – 14:00",title:"午餐 · 武隆特色",minis:[{ic:"🍲",html:"景區附近享用 <b>碗碗羊肉</b> 或土家菜。"}]},
+    {time:"14:00 – 16:30",title:"龙水峡地缝",note:"沿狹窄崖壁棧道徒步，欣賞地底瀑布與一線天嘅幽深奇景。",cards:["longshuixia"]},
+    {time:"16:30 – 19:00",title:"返回市區",minis:[{ic:"🚐",html:"乘包車返回重慶市區酒店，晚上喺市區享用溫馨晚餐放鬆身心。"}]}
+  ]},
+  {id:5,date:"10.13",week:"週二",title:"重慶地心探險一日遊",desc:"指定行程：頭燈、溶洞、暗河遊船——潛入恆溫 18℃ 嘅地底世界。",slots:[
+    {time:"09:00 – 10:30",title:"前往渝北區洛碛鎮",minis:[{ic:"🚗",html:"專車或預約車輛前往地心探險極地，車程約 1–1.5 小時。"}]},
+    {time:"10:30 – 15:30",title:"地心探险极地",note:"換上專業頭燈裝備跟隨嚮導穿行天然喀斯特溶洞，再乘小船穿梭數公里暗河秘境。",cards:["dixin"],minis:[{ic:"🔦",html:"<b>地心溶洞探險</b>：觀賞億年鐘乳石與奇幻光影。"},{ic:"🛶",html:"<b>地下暗河遊船</b>：體驗宛如地底世界嘅震撼景色。"}]},
+    {time:"16:00 – 17:30",title:"返回市區",minis:[{ic:"🚗",html:"結束探險行程後返回市區。"}]},
+    {time:"18:30 – 21:00",title:"養生之夜",minis:[{ic:"💆",html:"經歷兩天戶外行程，晚上喺解放碑周邊享受<b>養生腳底按摩</b>或享用精緻晚宴。"}]}
+  ]},
+  {id:6,date:"10.14",week:"週三",title:"彈性休閒 · 伴手禮採購與返程",desc:"最後一日輕鬆掃街買手信，帶住山城嘅味道返香港。",slots:[
+    {time:"10:00 – 12:00",title:"八一好吃街採購伴手禮",note:"退房後行李寄存酒店，前往附近掃街。",cards:["bayi"],minis:[{ic:"🎁",html:"手信推薦：<b>火鍋底料</b>、<b>陳麻花</b>、<b>蜀繡工藝品</b>。"}]},
+    {time:"12:00 – 13:30",title:"最後一頓重慶午餐",minis:[{ic:"🥢",html:"喺重慶嘅最後一餐，記得食返碗小麵。"}]},
+    {time:"13:30 – 14:30",title:"前往江北國際機場",minis:[{ic:"🧳",html:"由酒店前往機場，建議提前 2.5 小時抵達。"}]},
+    {time:"16:35",title:"國泰 CX945 重慶 → 香港",minis:[{ic:"✈️",html:"<b>16:35 起飛，19:50 抵達香港</b>，結束愉快嘅重慶之旅！"}]}
+  ]}
+];
+
+function cardHTML(id){
+  var s = SPOTS[id];
+  return '<div class="card" data-card>'+
+    '<div class="card-img"><img loading="lazy" src="'+s.img+'" alt="'+s.alt+'" onerror="this.closest(\'.card-img\').classList.add(\'img-failed\')"><div class="fallback">🏞</div><span class="card-tag">'+s.tag+'</span></div>'+
+    '<div class="card-body">'+
+      '<div class="card-name serif">'+s.name+' <small>'+s.sub+'</small></div>'+
+      '<div class="card-intro">'+s.intro+'</div>'+
+      '<button class="card-toggle" type="button">開放時間 · 門票 · 貼士 <span class="arrow">▾</span></button>'+
+      '<div class="card-detail"><div class="detail-inner">'+
+        '<div class="drow"><span class="k">🕐 時間</span><span class="v">'+s.hours+'</span></div>'+
+        '<div class="drow"><span class="k">🎫 門票</span><span class="v">'+s.ticket+'</span></div>'+
+        '<div class="drow tip"><span class="k">💡 貼士</span><span class="v">'+s.tip+'</span></div>'+
+      '</div></div>'+
+    '</div>'+
+  '</div>';
+}
+
+function renderDay(day){
+  var html = '<section class="dayhead"><div class="date">DAY '+day.id+' · 10 月 '+day.date.split(".")[1]+' 日 '+day.week+'</div>'+
+    '<h2 class="serif">'+day.title+'</h2><p>'+day.desc+'</p></section><div class="timeline">';
+  day.slots.forEach(function(slot){
+    html += '<div class="slot"><div class="slot-time">'+slot.time+'</div><div class="slot-title">'+slot.title+'</div>';
+    if(slot.note) html += '<div class="slot-note">'+slot.note+'</div>';
+    if(slot.cards) slot.cards.forEach(function(id){ html += cardHTML(id); });
+    if(slot.minis) slot.minis.forEach(function(m){ html += '<div class="mini"><span class="ic">'+m.ic+'</span><span>'+m.html+'</span></div>'; });
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+var tabsEl = document.getElementById('dayTabs');
+var contentEl = document.getElementById('dayContent');
+var currentDay = 1;
+
+DAYS.forEach(function(d){
+  var b = document.createElement('button');
+  b.className = 'daytab' + (d.id===1 ? ' active' : '');
+  b.type = 'button';
+  b.innerHTML = '<div class="d">D'+d.id+' · '+d.date+'</div><div class="t">'+d.week+'</div>';
+  b.addEventListener('click', function(){
+    currentDay = d.id;
+    tabsEl.querySelectorAll('.daytab').forEach(function(t){ t.classList.remove('active'); });
+    b.classList.add('active');
+    b.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    contentEl.style.opacity = 0;
+    setTimeout(function(){
+      contentEl.innerHTML = renderDay(d);
+      contentEl.style.transition = 'opacity .3s';
+      contentEl.style.opacity = 1;
+      window.scrollTo({top: document.querySelector('.daybar').offsetTop - 1, behavior:'smooth'});
+    }, 160);
+  });
+  tabsEl.appendChild(b);
+});
+
+contentEl.innerHTML = renderDay(DAYS[0]);
+
+contentEl.addEventListener('click', function(e){
+  var btn = e.target.closest('.card-toggle');
+  if(!btn) return;
+  var card = btn.closest('[data-card]');
+  card.classList.toggle('open');
+  btn.childNodes[0].nodeValue = card.classList.contains('open') ? '收合詳情 ' : '開放時間 · 門票 · 貼士 ';
+});
+</script>
+</body>
+</html>
